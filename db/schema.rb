@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514020142) do
+ActiveRecord::Schema.define(version: 20140514032520) do
 
   create_table "definitions", force: true do |t|
     t.text     "meaning"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20140514020142) do
     t.integer  "word_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "definitions", ["user_id"], name: "index_definitions_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

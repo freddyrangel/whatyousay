@@ -11,4 +11,8 @@ describe User do
     it { should have_db_column(:oauth_token) }
     it { should have_db_column(:oauth_expires_at) }
   end
+
+  context 'relations' do
+    it { should have_many(:definitions) }
+  end
 end
