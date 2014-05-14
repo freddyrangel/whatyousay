@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514014620) do
+ActiveRecord::Schema.define(version: 20140514014954) do
+
+  create_table "definitions", force: true do |t|
+    t.text     "meaning"
+    t.text     "example"
+    t.integer  "word_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
