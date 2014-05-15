@@ -28,10 +28,9 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'simplecov', :require => false
   gem 'factory_girl_rails'
   gem 'launchy'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
 end
 
 group :production do
