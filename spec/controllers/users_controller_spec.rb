@@ -6,9 +6,8 @@ describe UsersController do
 
     let!(:users) { create_list(:user, 2) }
 
-    it "returns http success" do
+    it "return list of users" do
       get :index, format: :json
-      #expected_response = UserSerializer.new(User.all).to_json
       expected_response = User.all.map{ |f| UserSerializer.new(f) }.to_json
       expect(response.body).to eq(expected_response)
     end
@@ -36,8 +35,6 @@ describe UsersController do
 
     let!(:user_params) { attributes_for(:user) }
     let(:create_action) { post :create, user: user_params, format: :json }
-
-    before(:each) { puts user_params }
 
     it "should create a new user" do
       expect { create_action }.to change(User, :count).by(1)
