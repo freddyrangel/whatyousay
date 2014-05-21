@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
+gem 'rails-api'
 gem 'sqlite3'
 gem 'uglifier'
 gem 'coffee-rails'
-gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+gem 'active_model_serializers'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pry-rails'
