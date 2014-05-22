@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe "Word Requests" do
-  describe "Words" do
+
+  describe "#index" do
 
     let!(:word) { create(:word) }
 
