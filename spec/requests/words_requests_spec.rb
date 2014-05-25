@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "Word Requests" do
+describe "/words" do
 
-  describe "#index" do
+  describe "GET '/words'" do
 
     let!(:word) { create(:word) }
 
@@ -20,7 +20,7 @@ describe "Word Requests" do
     end
   end
 
-  describe "#show" do
+  describe "GET '/words/:id'" do
     let!(:word) { create(:word) }
 
     before(:each) do
@@ -37,7 +37,7 @@ describe "Word Requests" do
     end
   end
 
-  describe "#create" do
+  describe "POST '/words'" do
 
     let(:create_request) do
       post "/words",

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "User" do
+describe "/users" do
 
-  describe "GET 'index'" do
+  describe "GET '/users'" do
 
     let!(:users) { create_list(:user, 2) }
 
@@ -21,7 +21,7 @@ describe "User" do
     end
   end
 
-  describe "GET 'show'" do
+  describe "GET '/users/:id'" do
 
     let!(:user) { create(:user) }
 
@@ -29,7 +29,7 @@ describe "User" do
       get "/users/#{user.id}", {}, { 'Accept' => Mime::JSON }
     end
 
-    it "returns http success" do
+    it "returns the user" do
       expected_response = UserSerializer.new(user).to_json
       expect(response.body).to eq(expected_response)
     end
@@ -39,7 +39,7 @@ describe "User" do
     end
   end
 
-  describe "GET 'create'" do
+  describe "POST '/users'" do
 
     let!(:user_params) { attributes_for(:user) }
 
@@ -93,7 +93,7 @@ describe "User" do
     end
   end
 
-  describe "GET 'update'" do
+  describe "PATCH '/users/:id'" do
 
     let!(:user) { create(:user) }
 
@@ -146,7 +146,7 @@ describe "User" do
     end
   end
 
-  describe "GET 'destroy'" do
+  describe "DELETE '/users/:id'" do
 
     let!(:user) { create(:user) }
 

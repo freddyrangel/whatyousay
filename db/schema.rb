@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140514032520) do
 
   create_table "definitions", force: true do |t|
-    t.text     "meaning"
+    t.string   "meaning"
     t.text     "example"
     t.integer  "word_id"
     t.datetime "created_at"
