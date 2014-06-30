@@ -1,0 +1,12 @@
+<h1>WhatYouSay</h1>
+
+<form ng-submit="submitWord()">
+  <input type="text" placeholder="Enter word" ng-model="word.name" />
+  <input type="submit" value="Add Word" />
+</form>
+
+<h4>Words:</h4>
+<div ng-repeat="(wordId, word) in words">
+  <p>{{ word.name }}</p>
+  <a ng-click="deleteWord(wordId)">Delete</a>
+</div>

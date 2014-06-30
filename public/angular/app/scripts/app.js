@@ -1,6 +1,7 @@
+/* global app:true */
 'use strict';
 
-angular
+var app = angular
   .module('angularApp', [
     'ngCookies',
     'ngResource',
@@ -10,8 +11,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/words.html',
+        controller: 'WordsCtrl'
       })
       .otherwise({
         redirectTo: '/'

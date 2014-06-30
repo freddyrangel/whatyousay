@@ -36,7 +36,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bower-rails (0.7.3)
     builder (3.2.2)
     callsite (0.0.11)
     capybara (2.2.1)
@@ -239,7 +238,6 @@ DEPENDENCIES
   active_model_serializers
   better_errors
   binding_of_caller
-  bower-rails
   capybara
   coffee-rails
   factory_girl_rails

@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
-gem 'bower-rails'
 gem 'rails-api'
 gem 'sqlite3'
 gem 'uglifier'
