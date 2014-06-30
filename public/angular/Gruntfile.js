@@ -78,6 +78,11 @@ module.exports = function (grunt) {
           ]
         }
       },
+      proxies: [{
+        context: "/",
+        host: 'localhost',
+        port: '5000'
+      }],
       test: {
         options: {
           port: 9001,
