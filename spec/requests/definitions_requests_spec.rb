@@ -9,7 +9,7 @@ describe "/word" do
     let!(:definition) { create(:definition, word: word) }
 
     before(:each) do
-      get "/words/#{word.id}/definitions", {}, { 'Accept' => Mime::JSON }
+      get "/api/v1/words/#{word.id}/definitions", {}, { 'Accept' => Mime::JSON }
     end
 
     it "returns a list of definitions" do
@@ -27,7 +27,7 @@ describe "/word" do
     let!(:definition) { create(:definition, word: word) }
 
     before(:each) do
-      get "/words/#{word.id}/definitions/#{definition.id}",
+      get "/api/v1/words/#{word.id}/definitions/#{definition.id}",
         {},
         { 'Accept' => Mime::JSON }
     end
@@ -47,7 +47,7 @@ describe "/word" do
     let!(:definition) { attributes_for(:definition, word: word) }
 
     let(:post_request) do
-      post "/words/#{word.id}/definitions",
+      post "/api/v1/words/#{word.id}/definitions",
         { definition: definition, word_id: word.id }.to_json,
         { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
     end
@@ -66,7 +66,7 @@ describe "/word" do
 
       it "should send location with response" do
         expect(response.location).
-          to eq(word_definition_path(word, Definition.last))
+          to eq(api_v1_word_definition_url(word, Definition.last))
       end
     end
 
@@ -96,7 +96,7 @@ describe "/word" do
     let!(:definition) { create(:definition, word: word) }
 
     let(:patch_request) do
-      patch "/words/#{word.id}/definitions/#{definition.id}",
+      patch "/api/v1/words/#{word.id}/definitions/#{definition.id}",
         { 
         definition: { 
           meaning: "New Meaning",
@@ -138,7 +138,7 @@ describe "/word" do
     let!(:definition) { create(:definition, word: word) }
 
     let(:delete_request) do
-      delete "words/#{word.id}/definitions/#{definition.id}"
+      delete "/api/v1/words/#{word.id}/definitions/#{definition.id}"
     end
 
     it "should destroy definition" do

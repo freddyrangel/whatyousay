@@ -7,7 +7,7 @@ describe "/words" do
     let!(:word) { create(:word) }
 
     before(:each) do
-      get '/words', {}, { 'Accept' => Mime::JSON }
+      get '/api/v1/words', {}, { 'Accept' => Mime::JSON }
     end
 
     it "should return a list of words in JSON" do
@@ -24,7 +24,7 @@ describe "/words" do
     let!(:word) { create(:word) }
 
     before(:each) do
-      get "/words/#{word.id}", {}, { 'Accept' => Mime::JSON }
+      get "/api/v1/words/#{word.id}", {}, { 'Accept' => Mime::JSON }
     end
 
     it "should return the word in JSON" do
@@ -40,7 +40,7 @@ describe "/words" do
   describe "POST '/words'" do
 
     let(:create_request) do
-      post "/words",
+      post "/api/v1/words",
         { word: 
          { name: "Chela" } 
       }.to_json,
@@ -61,14 +61,14 @@ describe "/words" do
 
       it "should send location with response" do
         word = json(response.body)
-        expect(response.location).to eq(word_url(word[:id]))
+        expect(response.location).to eq(api_v1_word_url(word[:id]))
       end
     end
 
     context "invalid request" do
 
       let(:invalid_create_request) do
-        post "/words",
+        post "/api/v1/words",
           { word: 
            { name: nil } 
         }.to_json,

@@ -7,7 +7,7 @@ describe "/users" do
     let!(:users) { create_list(:user, 2) }
 
     before(:each) do
-      get '/users', {}, { 'Accept' => Mime::JSON }
+      get '/api/v1/users', {}, { 'Accept' => Mime::JSON }
     end
 
     it "return list of users" do
@@ -26,7 +26,7 @@ describe "/users" do
     let!(:user) { create(:user) }
 
     before(:each) do
-      get "/users/#{user.id}", {}, { 'Accept' => Mime::JSON }
+      get "/api/v1/users/#{user.id}", {}, { 'Accept' => Mime::JSON }
     end
 
     it "returns the user" do
@@ -44,7 +44,7 @@ describe "/users" do
     let!(:user_params) { attributes_for(:user) }
 
     let(:create_request)  do
-       post "/users", { user: user_params }.to_json,
+       post "/api/v1/users", { user: user_params }.to_json,
          { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s } 
     end
 
@@ -62,14 +62,14 @@ describe "/users" do
 
       it "should send location with response" do
         returned_json = json(response.body)
-        expect(response.location).to eq(user_url(returned_json[:id]))
+        expect(response.location).to eq(api_v1_user_url(returned_json[:id]))
       end
     end
 
     context 'invalid request' do
       
       let(:invalid_create_request) do
-        post '/users',
+        post '/api/v1/users',
           { user: { email: nil } }.to_json,
           { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
       end
@@ -100,7 +100,7 @@ describe "/users" do
     context 'with valid params' do
 
       let(:update_request) do
-        patch "/users/#{user.id}",
+        patch "/api/v1/users/#{user.id}",
           { user: 
             { email: "newemail@example.com",
               user_name: user.user_name,
@@ -124,7 +124,7 @@ describe "/users" do
     context 'invalid params' do
 
       let(:invalid_update_request) do
-        patch "/users/#{user.id}",
+        patch "/api/v1/users/#{user.id}",
           { user: 
             { email: nil,
               user_name: user.user_name,
@@ -151,7 +151,7 @@ describe "/users" do
     let!(:user) { create(:user) }
 
     let(:destroy_request) do
-      delete "users/#{user.id}"
+      delete "/api/v1/users/#{user.id}"
     end
 
     it "should destroy the user" do
