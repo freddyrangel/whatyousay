@@ -6,6 +6,9 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
+//
+
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
 module.exports = function (grunt) {
 
@@ -69,6 +72,11 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [{
+        context: "/api/v1",
+        host: 'localhost',
+        port: '5000'
+      }],
       livereload: {
         options: {
           open: true,
@@ -78,11 +86,6 @@ module.exports = function (grunt) {
           ]
         }
       },
-      proxies: [{
-        context: "/",
-        host: 'localhost',
-        port: '5000'
-      }],
       test: {
         options: {
           port: 9001,
