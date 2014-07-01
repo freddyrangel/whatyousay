@@ -9,7 +9,7 @@ WhatYouSay is the result of a conversation with friends over the meaning of
 several Peruvian slang words and realizing there isn't a Spanish version of
 UrbanDictionary. So we decided to work on one.
 
-How to Contribute:
+###How to Contribute:
 
 It's still a work in progress so contributions are welcome. You can contribute
 in a number of ways. For example, you might:
@@ -31,11 +31,11 @@ When contributing:
   a failing test case that your patch solves
 * Open a pull request and we'll review it as soon as possible.
 
-Overview of stack:
+###Overview of stack:
 
 We've used a Rails JSON API backend with an AngularJS front-end. When running
 the app locally they need to run on separate servers. Use Foreman at the project
 root to fire up the servers
 
-``console
-foreman start`
+```console
+foreman start
