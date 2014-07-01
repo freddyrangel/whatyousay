@@ -24,6 +24,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div ng-include="'views/nav.html'"></div>
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -58,6 +59,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/words.js"></script>
         <script src="scripts/services/word.js"></script>
+        <script src="scripts/controllers/wordview.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <!-- endbuild -->
 </body>
 </html>
