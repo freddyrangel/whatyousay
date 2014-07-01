@@ -14,6 +14,10 @@ var app = angular
         templateUrl: 'views/words.html',
         controller: 'WordsCtrl'
       })
+      .when('/words/new', {
+        templateUrl: 'views/newword.html',
+        controller: 'NewWordCtrl'
+      })
       .when('/words/:id', {
         templateUrl: 'views/showword.html',
         controller: 'WordViewCtrl'
