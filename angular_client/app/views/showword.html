@@ -1,1 +1,9 @@
 <h1>{{ word.name }}</h1>
+
+<h4>Definition</h4>
+<div ng-repeat="definition in word.definitions">
+  Meaning:
+  <p>{{ definition.meaning }}</p>
+  Example:
+  <p>{{ definition.example }}</p>
+</div>
