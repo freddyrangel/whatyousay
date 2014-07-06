@@ -31,11 +31,24 @@ When contributing:
   a failing test case that your patch solves
 * Open a pull request and we'll review it as soon as possible.
 
-###Overview of stack:
+###Installation:
 
-We've used a Rails JSON API backend with an AngularJS front-end. When running
-the app locally they need to run on separate servers. Use Foreman at the project
-root to fire up the servers
+After cloning this repo, don't forget to run the following:
+
+```console
+bundle install
+rake db:migrate
+```
+
+You'll need NPM and Bower installed in order to fire up the server for Angular.
+
+```console
+curl -L https://npmjs.org/install.sh | sh
+npm install -g bower
+```
+
+Finally, use Foreman to fire up the Rails and Angular servers:
 
 ```console
 foreman start
+```
