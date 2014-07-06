@@ -1,6 +1,6 @@
 WhatYouSaY
 ======
-
+![Build Status](https://travis-ci.org/freddyrangel/whatyousay.svg?branch=master)
 [![Code
 Climate](https://codeclimate.com/github/freddyrangel/whatyousay.png)](https://codeclimate.com/github/freddyrangel/whatyousay)
 
