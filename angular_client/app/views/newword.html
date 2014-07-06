@@ -1,7 +1,7 @@
 <h1>Add New Word</h1>
-<form  ng-submit="submitWord()">
+<form  ng-controller="NewWordCtrl" ng-submit="wordForm.$valid && submitWord()" novalidate>
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Add Word" ng-model="word.word.name">
+    <input type="text" class="form-control" placeholder="Add Word" ng-model="word.word.name" required>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
