@@ -1,6 +1,4 @@
-/* global app:true */
 'use strict';
-
 var app = angular
   .module('angularApp', [
     'ngCookies',
